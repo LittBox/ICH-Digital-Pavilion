@@ -50,6 +50,19 @@ function initHotspots(items) {
         ? 'imgs/panorama/church_meeting_room_mobile.jpg' 
         : 'imgs/panorama/church_meeting_room_4k.jpg';
 
+    // 预加载图片以避免黑屏
+    const imgLoader = new Image();
+    imgLoader.onload = () => {
+        initViewer(panoramaImage, hotSpots);
+    };
+    imgLoader.onerror = (e) => {
+        alert("全景图资源加载失败，请检查网络连接");
+        console.error("Image load error", e);
+    };
+    imgLoader.src = panoramaImage;
+}
+
+function initViewer(panoramaImage, hotSpots) {
     pannellum.viewer('panorama-container', {
         type: 'equirectangular',
         panorama: panoramaImage,
