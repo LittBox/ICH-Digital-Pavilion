@@ -50,23 +50,20 @@ function initHotspots(items) {
         ? 'imgs/panorama/church_meeting_room_mobile.jpg' 
         : 'imgs/panorama/church_meeting_room_4k.jpg';
 
-    // 预加载图片以避免黑屏
-    const imgLoader = new Image();
-    imgLoader.onload = () => {
-        initViewer(panoramaImage, hotSpots);
-    };
-    imgLoader.onerror = (e) => {
-        alert("全景图资源加载失败，请检查网络连接");
-        console.error("Image load error", e);
-    };
-    imgLoader.src = panoramaImage;
+    // 优化加载体验：
+    // 1. 立即初始化 viewer，传入 preview 参数显示低清预览图
+    // 2. Pannellum 会自动处理主图的异步加载和进度显示
+    initViewer(panoramaImage, hotSpots);
 }
 
 function initViewer(panoramaImage, hotSpots) {
     pannellum.viewer('panorama-container', {
         type: 'equirectangular',
         panorama: panoramaImage,
-        autoLoad: true,
+        preview: 'imgs/panorama/preview.jpg', // 添加预览图，提升首屏体验
+        previewTitle: "傣乡彝韵·非遗数字展馆", // 预览图上的标题
+        previewAuthor: "Loading...", // 预览图上的作者/状态
+        autoLoad: true, // 自动开始加载大图
         compass: true,
         northOffset: 0,
         hotSpots: hotSpots,
