@@ -4,12 +4,22 @@ let currentGalleryIndex = 0;
 
 window.addEventListener('DOMContentLoaded', () => {
     fetch('data/items.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             itemsData = data;
             initHotspots(data);
         })
-        .catch(error => console.error('数据加载失败:', error));
+        .catch(error => {
+            console.error('数据加载失败:', error);
+            // 尝试降级加载（无热点模式），并提示用户
+            alert('数据加载异常，将尝试仅加载全景图: ' + error.message);
+            initHotspots([]);
+        });
 });
 
 function initHotspots(items) {
@@ -46,7 +56,15 @@ function initHotspots(items) {
         autoLoad: true,
         compass: true,
         northOffset: 0,
-        hotSpots: hotSpots
+        hotSpots: hotSpots,
+        strings: {
+            loadButtonLabel: "点击加载全景图",
+            loadingLabel: "加载中...",
+            bylineLabel: "by 傣乡彝韵"
+        }
+    }).on('error', (e) => {
+        console.error('Pannellum error:', e);
+        alert('全景图加载错误: ' + e);
     });
 }
 
