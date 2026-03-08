@@ -31,7 +31,7 @@ function initHotspots(items) {
 
     pannellum.viewer('panorama-container', {
         type: 'equirectangular',
-        panorama: 'imgs/panorama/church_meeting_room_4k.png',
+        panorama: 'imgs/panorama/church_meeting_room_4k.jpg',
         autoLoad: true,
         compass: true,
         northOffset: 0,
@@ -74,7 +74,10 @@ function renderGallery() {
     
     currentGalleryImages.forEach((src, index) => {
         const thumb = document.createElement('img');
-        thumb.src = src;
+        // Convert real image path to gallery thumbnail path
+        // imgs/real/foo.jpg -> imgs/thumbs_gallery/foo.jpg
+        const thumbSrc = src.replace('imgs/real/', 'imgs/thumbs_gallery/');
+        thumb.src = thumbSrc;
         thumb.className = 'gallery-thumb';
         thumb.loading = 'lazy'; // Lazy load
         if (index === currentGalleryIndex) {

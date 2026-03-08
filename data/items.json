@@ -5,7 +5,7 @@
     "category": "传统手工艺",
     "ethnicity": "傣族（花腰傣）",
     "pitch": -5,
-    "yaw": -15,
+    "yaw": 0,
     "mainImage": "imgs/real/huayaodai_pottery_01.JPG",
     "gallery": [
       "imgs/real/huayaodai_pottery_01.JPG",
@@ -25,7 +25,7 @@
     "category": "传统手工艺",
     "ethnicity": "傣族（花腰傣）",
     "pitch": -5,
-    "yaw": 15,
+    "yaw": 22,
     "mainImage": "imgs/real/huayaodai_weaving_01.jpg",
     "gallery": [
       "imgs/real/huayaodai_weaving_02.jpg",
@@ -41,16 +41,16 @@
     "category": "非遗文创",
     "ethnicity": "傣族（花腰傣）",
     "pitch": -5,
-    "yaw": 45,
-    "mainImage": "imgs/real/huayaodai_barbie_01.jpg",
+    "yaw": 44,
+    "mainImage": "imgs/real/huayaodai_barbie_01.JPG",
     "gallery": [
-      "imgs/real/huayaodai_barbie_02.jpg",
-      "imgs/real/huayaodai_barbie_03.jpg",
-      "imgs/real/huayaodai_barbie_04.jpg",
-      "imgs/real/huayaodai_barbie_05.jpg",
-      "imgs/real/huayaodai_barbie_06.jpg",
-      "imgs/real/huayaodai_barbie_07.jpg",
-      "imgs/real/huayaodai_barbie_08.jpg"
+      "imgs/real/huayaodai_barbie_02.JPG",
+      "imgs/real/huayaodai_barbie_03.JPG",
+      "imgs/real/huayaodai_barbie_04.JPG",
+      "imgs/real/huayaodai_barbie_05.JPG",
+      "imgs/real/huayaodai_barbie_06.JPG",
+      "imgs/real/huayaodai_barbie_07.JPG",
+      "imgs/real/huayaodai_barbie_08.JPG"
     ],
     "description": "花腰傣“萝卡叠”芭比文创，由非遗传承人刀凤英团队创作。以现代芭比娃娃为载体，融入花腰傣传统服饰、银饰、斗笠等文化元素，通过场景化陈列，生动再现了花腰傣的织锦、歌舞、生活习俗等文化场景，是传统非遗与现代潮流结合的创新之作。",
     "fieldNote": "我们在新平漠沙镇非遗展厅看到了这组“花腰芭比”，传承人刀凤英介绍，这是为了让更多年轻人了解和喜爱花腰傣文化而创作的文创产品，让非遗以更时尚的方式走进大众生活。"
@@ -61,12 +61,174 @@
     "category": "民俗文化",
     "ethnicity": "傣族（花腰傣）",
     "pitch": -5,
-    "yaw": 75,
+    "yaw": 66,
     "mainImage": "imgs/real/huayaodai_shout_moon_01.jpg",
     "gallery": [
-      "imgs/real/huayaodai_shout_moon_02.jpg"
+      "imgs/real/huayaodai_shout_moon_02.JPG"
     ],
     "description": "“喊月亮”（傣语称“唤嘞楼”）是新平花腰傣先民传承下来的自然祭祀活动，每年农历二月中旬举行。活动前，寨民准备鸡蛋、鸭蛋、糯米、鱼虫及刺桐花等祭品，通过祭祀月亮神，祈求风调雨顺、五谷丰登、六畜兴旺。它不仅是花腰傣崇拜月亮神的具体体现，也是族人聚会、休闲娱乐的重要形式，承载着花腰傣对自然的敬畏与对美好生活的祈愿。",
     "fieldNote": "我们在新平花腰傣民俗非遗展厅了解到，“喊月亮”活动主要分布在戛洒镇和水塘镇的花腰傣村寨，是当地最具代表性的民俗活动之一，完整保留了花腰傣传统的自然崇拜与文化基因。"
+  },
+  {
+    "id": "yangwu_firecake",
+    "name": "扬武火烤饼",
+    "category": "饮食文化",
+    "ethnicity": "彝族/傣族",
+    "pitch": -5,
+    "yaw": 88,
+    "mainImage": "imgs/real/yangwu_firecake_01.jpg",
+    "gallery": [],
+    "description": "扬武镇传统火烤饼，以当地紫米、红糖为原料，经炭火慢烤而成，外酥里糯，甜香浓郁，是新平地区节庆与待客的标志性点心。",
+    "fieldNote": "我们在扬武镇拜访了制作火烤饼的刀阿姨，她说这是逢年过节必不可少的待客美食，每一块饼都承载着当地人的生活记忆。"
+  },
+  {
+    "id": "intangible_heritage_top",
+    "name": "非遗陀螺",
+    "category": "传统体育",
+    "ethnicity": "彝族/傣族",
+    "pitch": -5,
+    "yaw": 110,
+    "mainImage": "imgs/real/intangible_heritage_top_01.jpg",
+    "gallery": [],
+    "description": "非遗陀螺是新平地区流传已久的传统体育项目，以硬木精工制作，玩法讲究技巧与力量，兼具竞技性与观赏性，是当地节庆活动中不可或缺的娱乐项目。",
+    "fieldNote": "在新平非遗展示中心，巨型陀螺装置成为标志性景观，直观展现了这一传统体育项目的文化分量。"
+  },
+  {
+    "id": "nahu_centuries_old_well",
+    "name": "那喊百年古井",
+    "category": "历史遗迹",
+    "ethnicity": "傣族（花腰傣）",
+    "pitch": -5,
+    "yaw": 132,
+    "mainImage": "imgs/real/nahu_centuries_old_well_01.jpg",
+    "gallery": [],
+    "description": "那喊百年古井是花腰傣村寨的重要水源地，历经数百年仍在使用，井台建筑融合了傣汉建筑风格，见证了村寨的历史变迁与族群生活。",
+    "fieldNote": "我们在那喊村探访时，村民仍在使用这口古井，它不仅是生活水源，更是凝聚族群记忆的文化符号。"
+  },
+  {
+    "id": "dai_pottery_jars",
+    "name": "傣族彩釉陶罐",
+    "category": "传统手工艺",
+    "ethnicity": "傣族",
+    "pitch": -5,
+    "yaw": 154,
+    "mainImage": "imgs/real/dai_pottery_jars_01.jpg",
+    "gallery": [],
+    "description": "傣族彩釉陶罐以本地陶土为原料，经刻花、填彩、烧制而成，纹饰多取材于荷花、火焰等自然与图腾元素，兼具实用与艺术价值，是傣族制陶技艺的代表。",
+    "fieldNote": "在新平陶艺工作室，传承人介绍，这些陶罐常用于储茶、储物，每一道刻纹都蕴含着傣族对自然的敬畏与审美。"
+  },
+  {
+    "id": "xinping_orange_keychain",
+    "name": "新平橙文创钥匙扣",
+    "category": "非遗文创",
+    "ethnicity": "傣族（花腰傣）",
+    "pitch": -5,
+    "yaw": 176,
+    "mainImage": "imgs/real/xinping_orange_keychain_01.JPG",
+    "gallery": [],
+    "description": "新平橙文创钥匙扣以当地特产“新平橙”为原型，融入花腰傣服饰纹样与斗笠元素，采用PVC材质制作，是兼具地域特色与民族文化的伴手礼。",
+    "fieldNote": "在新平非遗中心文创商店，这款钥匙扣深受游客喜爱，成为传播花腰傣文化与新平地域形象的小巧载体。"
+  },
+  {
+    "id": "yi_embroidered_basket",
+    "name": "彝族刺绣背篓",
+    "category": "传统服饰/手工艺",
+    "ethnicity": "彝族",
+    "pitch": -5,
+    "yaw": 198,
+    "mainImage": "imgs/real/yi_embroidered_basket_01.JPG",
+    "gallery": [],
+    "description": "彝族刺绣背篓以竹篾编织为基底，辅以鲜艳的刺绣花卉纹样，既是日常劳作的工具，也是彝族女性精湛技艺与审美情趣的体现。",
+    "fieldNote": "在锦绣社区，这些背篓与珠串饰品一同陈列，直观展现了彝族丰富的物质与精神文化。"
+  },
+  {
+    "id": "lang_e_sang_luo",
+    "name": "朗娥与桑洛传说",
+    "category": "民间传说",
+    "ethnicity": "傣族（花腰傣）",
+    "pitch": -5,
+    "yaw": 220,
+    "mainImage": "imgs/real/lang_e_sang_luo_01.jpg",
+    "gallery": [
+      "imgs/real/lang_e_sang_luo_02.jpg"
+    ],
+    "description": "“朗娥与桑洛”是花腰傣流传已久的爱情传说，讲述了花腰傣少女朗娥与青年桑洛之间忠贞不渝的爱情故事，以及他们为守护族群与爱情所经历的考验。这一传说不仅是花腰傣文学艺术的重要源头，也深刻影响了当地的民俗、服饰与节庆文化，是花腰傣精神世界的重要载体。",
+    "fieldNote": "我们在嘎洒镇新寨探访时，村口的浮雕与标识牌直观再现了“朗娥与桑洛”的传说场景，当地老人介绍，这一故事至今仍在花腰傣村寨中以歌谣、叙事等形式口耳相传。"
+  },
+  {
+    "id": "ethnic_dolls_collection",
+    "name": "多民族服饰布偶",
+    "category": "非遗文创",
+    "ethnicity": "多民族",
+    "pitch": -5,
+    "yaw": 242,
+    "mainImage": "imgs/real/ethnic_dolls_collection_01.JPG",
+    "gallery": [],
+    "description": "多民族服饰布偶以中国各少数民族传统服饰为灵感，手工缝制而成，每款布偶都还原了对应民族的头饰、银饰、刺绣等特色元素，是展示中华各民族服饰文化的微型博物馆。",
+    "fieldNote": "我们在锦绣社区看到，这些布偶涵盖了东乡族、苗族、彝族等多个民族，每一件都凝聚着制作者对民族文化的细致观察与热爱。"
+  },
+  {
+    "id": "green_glazed_ceramics",
+    "name": "青釉创意陶艺",
+    "category": "传统手工艺",
+    "ethnicity": "多民族融合",
+    "pitch": -5,
+    "yaw": 264,
+    "mainImage": "imgs/real/green_glazed_ceramics_01.JPG",
+    "gallery": [],
+    "description": "青釉创意陶艺以青釉为主要釉色，结合捏塑、雕刻等手法，创作出鳄鱼、恐龙等仿生造型及实用器皿，既保留了传统陶艺的质感，又融入了现代设计的趣味与创意。",
+    "fieldNote": "在锦绣社区，这些青釉作品陈列在窗边，阳光透过玻璃洒在釉面上，呈现出温润而富有层次的质感。"
+  },
+  {
+    "id": "huayaodai_bamboo_hat",
+    "name": "花腰傣斗笠",
+    "category": "传统服饰",
+    "ethnicity": "傣族（花腰傣）",
+    "pitch": -5,
+    "yaw": 286,
+    "mainImage": "imgs/real/huayaodai_bamboo_hat_01.jpg",
+    "gallery": [],
+    "description": "花腰傣斗笠，当地亦称作“遮羞帽”，是花腰傣标志性头饰。其造型宽大扁平，花腰傣妇女习惯斜戴于额前，帽檐恰好遮挡陌生人视线，既可遮阳避雨，也能遮掩面容、遮羞避嫌，让姑娘们在社交中保留羞涩与神秘感，同时还能悄悄观察外界而不被看清表情。斗笠常搭配银饰、流苏耳饰与银项圈，是花腰傣女性服饰中最具辨识度的元素，承载着花腰傣的生活智慧、审美文化与独特的社交礼仪。",
+    "fieldNote": "在新平花腰傣村寨，斗笠是女性日常与节庆的必备头饰，我们在拍摄时，传承人介绍，每一顶斗笠都由当地妇女手工编织，工艺细腻，是花腰傣文化的重要符号。"
+  },
+  {
+    "id": "xpy_yi_culture_wall",
+    "name": "新平一幼彝族风情教育文化墙",
+    "category": "非遗教育",
+    "ethnicity": "彝族",
+    "pitch": -5,
+    "yaw": 308,
+    "mainImage": "imgs/real/xpy_yi_culture_wall_01.JPG",
+    "gallery": [
+      "imgs/real/xpy_yi_culture_wall_02.JPG",
+      "imgs/real/xpy_yi_culture_wall_03.JPG",
+      "imgs/real/xpy_yi_culture_wall_04.JPG",
+      "imgs/real/xpy_yi_culture_wall_05.JPG",
+      "imgs/real/xpy_yi_culture_wall_06.JPG",
+      "imgs/real/xpy_yi_culture_wall_07.JPG",
+      "imgs/real/xpy_yi_culture_wall_08.JPG",
+      "imgs/real/xpy_yi_culture_wall_09.JPG",
+      "imgs/real/xpy_yi_culture_wall_10.JPG",
+      "imgs/real/xpy_yi_culture_wall_11.JPG",
+      "imgs/real/xpy_yi_culture_wall_12.JPG",
+      "imgs/real/xpy_yi_culture_wall_13.JPG",
+      "imgs/real/xpy_yi_culture_wall_14.JPG"
+    ],
+    "description": "新平第一幼儿园“彝族风情”教育文化墙，是将本土彝族非遗文化融入学前教育的特色实践。以“四风文化·彝族风”为核心，沿教学楼楼梯分层打造，通过幼儿手工作品、场景化装置与互动板块，系统呈现彝族图腾、三弦、火把节、民族服饰、草编、刺绣等文化元素，让孩子们在日常环境中直观感受彝族文化的魅力。",
+    "fieldNote": "我们在新平第一幼儿园探访时看到，这面文化墙不仅是静态的展示，更是动态的教育课堂。孩子们亲手参与草编、刺绣和泥塑创作，将彝族文化符号转化为自己的作品，实现了非遗文化在幼儿阶段的活态传承与启蒙。"
+  },
+  {
+    "id": "xpy_culture_workshop",
+    "name": "新平一幼非遗文化工坊",
+    "category": "非遗教育",
+    "ethnicity": "彝族、傣族（花腰傣）",
+    "pitch": -5,
+    "yaw": 330,
+    "mainImage": "imgs/real/xpy_culture_workshop-01.JPG",
+    "gallery": [
+      "imgs/real/xpy_culture_workshop-02.JPG"
+    ],
+    "description": "新平一幼非遗文化工坊是该校文化氛围建设的核心载体，以本土彝族、花腰傣等民族的传统手工艺为教学内容，将草编、竹编、土陶等非遗技艺融入校园美育。工坊内陈列着学生与教师共同创作的草编容器、竹编器具、土陶罐等作品，通过实践操作让学生直观感受民族文化的魅力，实现非遗文化在校园中的活态传承。",
+    "fieldNote": "我们在新平一幼探访时看到，这间工坊不仅是作品陈列室，更是常态化的非遗课堂。孩子们在这里亲手编织、制陶，将本土文化符号转化为自己的作品，让民族文化成为校园生活的一部分。"
   }
 ]
