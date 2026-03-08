@@ -1,0 +1,22 @@
+[
+  {
+    "id": "huayaodai_pottery",
+    "name": "花腰傣土陶工艺品",
+    "category": "传统手工艺",
+    "ethnicity": "傣族（花腰傣）",
+    "pitch": -5,
+    "yaw": 30,
+    "mainImage": "imgs/real/huayaodai_pottery_01.JPG",
+    "gallery": [
+      "imgs/real/huayaodai_pottery_01.JPG",
+      "imgs/real/huayaodai_pottery_02.JPG",
+      "imgs/real/huayaodai_pottery_03.JPG",
+      "imgs/real/huayaodai_pottery_04.JPG",
+      "imgs/real/huayaodai_pottery_05.JPG",
+      "imgs/real/huayaodai_pottery_06.JPG",
+      "imgs/real/huayaodai_pottery_07.JPG"
+    ],
+    "description": "花腰傣土陶工艺品，以哀牢山天然黏土为原料，采用纯手工捏塑、泥条盘筑等传统技艺制作，经柴火烧制而成。作品涵盖傣族人物、传统建筑、生活器具等，造型古朴生动，纹饰独特，既保留了千年制陶技艺的精髓，又融入了花腰傣的民俗文化与生活美学，具有浓郁的民族特色和艺术价值。",
+    "fieldNote": ""
+  }
+]
