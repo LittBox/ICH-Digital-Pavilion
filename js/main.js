@@ -2,7 +2,7 @@ let itemsData = [];
 let currentGalleryImages = [];
 let currentGalleryIndex = 0;
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
     fetch('data/items.json')
         .then(response => response.json())
         .then(data => {
@@ -29,9 +29,20 @@ function initHotspots(items) {
         clickHandlerArgs: { id: item.id }
     }));
 
+    // 检测屏幕宽度，判断是否为移动端
+    // 阈值设为 768px (iPad Portrait)
+    const isMobile = window.innerWidth < 768;
+    
+    // 根据设备选择全景图资源
+    // 移动端使用专门优化的小图 (需确保 imgs/panorama/church_meeting_room_mobile.jpg 存在)
+    // PC端使用 4K 原图
+    const panoramaImage = isMobile 
+        ? 'imgs/panorama/church_meeting_room_mobile.jpg' 
+        : 'imgs/panorama/church_meeting_room_4k.jpg';
+
     pannellum.viewer('panorama-container', {
         type: 'equirectangular',
-        panorama: 'imgs/panorama/church_meeting_room_4k.jpg',
+        panorama: panoramaImage,
         autoLoad: true,
         compass: true,
         northOffset: 0,
