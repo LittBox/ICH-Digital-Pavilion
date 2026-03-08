@@ -1,11 +1,8 @@
 let itemsData = [];
+let currentGalleryImages = [];
+let currentGalleryIndex = 0;
 
 window.addEventListener('load', () => {
-    // Initial load, we will reload with hotspots after fetching data
-    // But to show something initially, or we can just fetch first.
-    // The README says "5.2 阶段二：加载JSON数据 ... initHotspots(data)"
-    // So we should fetch data first.
-    
     fetch('data/items.json')
         .then(response => response.json())
         .then(data => {
@@ -27,9 +24,6 @@ function initHotspots(items) {
                     <img src="imgs/thumbs/${item.id}-thumb.jpg" alt="${item.name}">
                 </div>
             `;
-            // Add click event listener to the div or the image
-            // Pannellum handles clickHandlerFunc but for custom tooltips, sometimes we need to be careful.
-            // But the README uses clickHandlerFunc which is standard Pannellum API.
         },
         clickHandlerFunc: (evt, args) => showDetail(args.id),
         clickHandlerArgs: { id: item.id }
@@ -56,21 +50,57 @@ function showDetail(id) {
     document.getElementById('detail-fieldnote').textContent = item.fieldNote;
     document.getElementById('detail-main-img').src = item.mainImage;
 
-    // Generate gallery thumbnails
-    const galleryDiv = document.getElementById('detail-gallery');
-    galleryDiv.innerHTML = '';
-    if (item.gallery && item.gallery.length) {
-        item.gallery.forEach(src => {
-            const thumb = document.createElement('img');
-            thumb.src = src;
-            thumb.className = 'gallery-thumb';
-            thumb.onclick = () => document.getElementById('detail-main-img').src = src;
-            galleryDiv.appendChild(thumb);
-        });
+    // Setup gallery state
+    if (item.gallery && item.gallery.length > 0) {
+        currentGalleryImages = item.gallery;
+    } else {
+        currentGalleryImages = [item.mainImage];
     }
+    
+    // Reset index to mainImage or 0
+    currentGalleryIndex = currentGalleryImages.indexOf(item.mainImage);
+    if (currentGalleryIndex === -1) currentGalleryIndex = 0;
+
+    // Generate gallery thumbnails
+    renderGallery();
 
     // Show overlay
     document.getElementById('detail-overlay').classList.remove('hidden');
+}
+
+function renderGallery() {
+    const galleryDiv = document.getElementById('detail-gallery');
+    galleryDiv.innerHTML = '';
+    
+    currentGalleryImages.forEach((src, index) => {
+        const thumb = document.createElement('img');
+        thumb.src = src;
+        thumb.className = 'gallery-thumb';
+        if (index === currentGalleryIndex) {
+            thumb.classList.add('active');
+        }
+        thumb.onclick = () => updateMainImage(index);
+        galleryDiv.appendChild(thumb);
+    });
+}
+
+function updateMainImage(index) {
+    if (index < 0 || index >= currentGalleryImages.length) return;
+    
+    currentGalleryIndex = index;
+    const src = currentGalleryImages[index];
+    document.getElementById('detail-main-img').src = src;
+    
+    // Update active state in thumbnails
+    const thumbs = document.querySelectorAll('.gallery-thumb');
+    thumbs.forEach((thumb, i) => {
+        if (i === index) {
+            thumb.classList.add('active');
+            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
 }
 
 // Close overlay events
@@ -89,3 +119,24 @@ if (overlay) {
         }
     });
 }
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    const overlay = document.getElementById('detail-overlay');
+    // Only handle keys if overlay is visible
+    if (!overlay || overlay.classList.contains('hidden')) return;
+
+    if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        overlay.classList.add('hidden');
+    } else if (e.key === 'ArrowLeft') {
+        let newIndex = currentGalleryIndex - 1;
+        if (newIndex < 0) newIndex = currentGalleryImages.length - 1; // Loop to last
+        updateMainImage(newIndex);
+    } else if (e.key === 'ArrowRight') {
+        let newIndex = currentGalleryIndex + 1;
+        if (newIndex >= currentGalleryImages.length) newIndex = 0; // Loop to first
+        updateMainImage(newIndex);
+    }
+});

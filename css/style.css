@@ -68,8 +68,10 @@
     border-radius: 4px;
     border: 2px solid transparent;
 }
-.gallery-thumb:hover {
+.gallery-thumb:hover,
+.gallery-thumb.active {
     border-color: cyan;
+    box-shadow: 0 0 5px cyan;
 }
 .detail-right {
     flex: 1;
