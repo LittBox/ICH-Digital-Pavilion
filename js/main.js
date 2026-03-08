@@ -76,6 +76,7 @@ function renderGallery() {
         const thumb = document.createElement('img');
         thumb.src = src;
         thumb.className = 'gallery-thumb';
+        thumb.loading = 'lazy'; // Lazy load
         if (index === currentGalleryIndex) {
             thumb.classList.add('active');
         }
@@ -89,14 +90,21 @@ function updateMainImage(index) {
     
     currentGalleryIndex = index;
     const src = currentGalleryImages[index];
-    document.getElementById('detail-main-img').src = src;
+    const mainImg = document.getElementById('detail-main-img');
+    
+    // Simple fade transition
+    mainImg.style.opacity = '0';
+    setTimeout(() => {
+        mainImg.src = src;
+        mainImg.style.opacity = '1';
+    }, 200);
     
     // Update active state in thumbnails
     const thumbs = document.querySelectorAll('.gallery-thumb');
     thumbs.forEach((thumb, i) => {
         if (i === index) {
             thumb.classList.add('active');
-            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         } else {
             thumb.classList.remove('active');
         }
