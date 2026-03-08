@@ -63,7 +63,11 @@ function showDetail(id) {
 
     // Setup gallery state
     if (item.gallery && item.gallery.length > 0) {
-        currentGalleryImages = item.gallery;
+        currentGalleryImages = [...item.gallery];
+        // Ensure mainImage is in the gallery
+        if (!currentGalleryImages.includes(item.mainImage)) {
+            currentGalleryImages.unshift(item.mainImage);
+        }
     } else {
         currentGalleryImages = [item.mainImage];
     }
