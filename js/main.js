@@ -107,6 +107,9 @@ function showDetail(id) {
     // Generate gallery thumbnails
     renderGallery();
 
+    // Preload adjacent images (current, next, previous)
+    preloadImages([currentGalleryIndex, currentGalleryIndex + 1, currentGalleryIndex - 1]);
+
     // Show overlay
     document.getElementById('detail-overlay').classList.remove('hidden');
 }
@@ -138,12 +141,34 @@ function updateMainImage(index) {
     const src = currentGalleryImages[index];
     const mainImg = document.getElementById('detail-main-img');
     
-    // Simple fade transition
-    mainImg.style.opacity = '0';
-    setTimeout(() => {
+    // Preload adjacent images
+    preloadImages([index - 1, index + 1]);
+    
+    // Optimize switching:
+    // 1. If image is already cached (complete), swap immediately without animation delay
+    // 2. If not, load it in background then swap
+    
+    const tempImg = new Image();
+    const targetIndex = index;
+    
+    const onLoaded = () => {
+        // Prevent race condition: if user switched to another image, ignore this load
+        if (currentGalleryIndex !== targetIndex) return;
+        
         mainImg.src = src;
         mainImg.style.opacity = '1';
-    }, 200);
+    };
+
+    tempImg.onload = onLoaded;
+    tempImg.src = src;
+    
+    if (tempImg.complete) {
+        onLoaded();
+        tempImg.onload = null; // Avoid double trigger
+    } else {
+        // Show loading state (half opacity)
+        mainImg.style.opacity = '0.5';
+    }
     
     // Update active state in thumbnails
     const thumbs = document.querySelectorAll('.gallery-thumb');
@@ -194,3 +219,22 @@ document.addEventListener('keydown', (e) => {
         updateMainImage(newIndex);
     }
 });
+
+// Helper for image preloading
+const preloadedCache = new Set();
+function preloadImages(indices) {
+    indices.forEach(index => {
+        // Handle wrap-around indices if needed, or just clamp
+        if (index < 0) index = currentGalleryImages.length + index;
+        if (index >= currentGalleryImages.length) index = index % currentGalleryImages.length;
+        
+        if (index >= 0 && index < currentGalleryImages.length) {
+            const src = currentGalleryImages[index];
+            if (!preloadedCache.has(src)) {
+                const img = new Image();
+                img.src = src;
+                preloadedCache.add(src);
+            }
+        }
+    });
+}
